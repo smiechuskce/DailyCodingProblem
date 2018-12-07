@@ -15,8 +15,17 @@ def CompareSumWithK(numbers, k):
         start = start + 1
     return False
 
-numbers = [10, 15, 3, 7]
-k = 10
+def CompareSumWithKInOnePass(numbers, k, start):
+    
+    if len(numbers) == 2 and numbers[0] + numbers[1] == k:
+        return True
+    elif len(numbers) < 2:
+        return False
+    else:
+        return CompareSumWithKInOnePass(numbers[start:], k, start)
 
-result = CompareSumWithK(numbers, k)
-print result 
+numbers = [10, 15, 3, 7]
+k = 25
+
+result = CompareSumWithKInOnePass(numbers, k, 1)
+print result
