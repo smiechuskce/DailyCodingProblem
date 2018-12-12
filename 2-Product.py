@@ -6,6 +6,17 @@
 
 # Follow-up: what if you can't use division?
 
+def GetProductUsingDivision(numbers):
+
+    tempProduct = 1
+
+    for number in numbers:
+        tempProduct = tempProduct * number
+    
+    return [tempProduct / numbers[x] for x in range(0, len(numbers))]
+
+# This one is just without division
+
 def GetProduct(numbers, i):
 
     product = 1
@@ -32,4 +43,7 @@ def GetProducts(numbers):
 numbers = [1, 2, 3, 4, 5]
 
 products = GetProducts(numbers)
+print products
+
+products = GetProductUsingDivision(numbers)
 print products
